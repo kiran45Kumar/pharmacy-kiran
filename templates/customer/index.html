@@ -1,0 +1,549 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pharmacy Management System</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/f3c81801f8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- navbar section -->
+    <section class="top">
+      <div class="navbar-top-section">
+        <div class="nav-logo">
+          <h1>Sudeeksha Pharmacy</h1>
+        </div>
+        <div class="navbar-search">
+          <i class="bx bx-search-alt-2"></i>
+          <input type="search" placeholder="Search Medicines" />
+        </div>
+        <div class="nav-cart">
+          <div class="nav-icon">
+            <i class="bx bx-location-plus box-icons"></i>
+            <div class="nav-head">
+              <p>Delivery Address</p>
+              <h4>Bengaluru 560027 <i class="bx bx-chevron-down"></i></h4>
+            </div>
+          </div>
+          <i class="bx bx-cart-alt" id="cart" onclick="cart()"></i>
+          {% if name %}
+            <h1 id="user-text">Hello, {{name}}</h1>
+          {% else %}
+          <div class="button" onclick="login()">
+            <p onclick="">Login</p>
+            <i onclick="" class="bx bx-user-circle"></i>
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+      <hr class="horizontal" />
+      <div class="navbar-bottom-section">
+        <li>
+          <a href="/" class="color">
+            <span class="span"> Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="/sell" class="black">
+            <span class="span-2"> Sell Now</span>
+          </a>
+        </li>
+        <li>
+          <a href="/medicines" class="black">
+            <span class="span-2">Medicines</span>
+          </a>
+        </li>
+        <li>
+          <a href="/order" class="black">
+            <span class="span-2">Orders</span>
+          </a>
+        </li>
+        <li>
+          <a href="/contact" class="black">
+            <span class="span-2">Contact Us</span>
+          </a>
+        </li>
+      </div>
+    </section>
+    {% block body %}
+      
+    
+    <!-- hero section -->
+    <section>
+      <div class="hero-section">
+        <img src="{% static 'images/hero-left.svg' %}" alt="" />
+        <img src="{% static 'images/hero-right.svg' %}" alt="" />
+        
+        <div class="centered" >
+          <a href="/medicines" class="search-medicine"></a>
+          <h1>Buy Medicines and Essentials</h1>
+          <div class="input-section" id="search2" >
+            <i  class="bx bx-search-alt-2"></i>
+            <p>Search Medicines</p>
+          </div>
+        </div>
+      </a>
+      </div>
+    </section>
+    <!-- banner section -->
+    <section>
+      <div class="wrapper-div">
+        <div class="wrapper">
+          <i id="left" class="fa-solid fas fa-angle-left"></i>
+          <ul class="carousel">
+            <li class="card">
+              <div class="img">
+                <img src="{% static 'images/img1.webp' %}" alt="" draggable="false" />
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img src="{% static 'images/img2.webp' %}" alt="" draggable="false" />
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img src="{% static 'images/img3.webp' %}" alt="" draggable="false" />
+              </div>
+            </li>
+          </ul>
+          <i id="right" class="fa-solid fas fa-angle-right"></i>
+        </div>
+      </div>
+    </section>
+    <!-- products section -->
+    <section>
+      <div class="flex">
+        <h1>Explore Our Products</h1>
+        <p>View all</p>
+      </div>
+      <div class="products-section">
+        <div class="products">
+          <div class="product-card">
+            <div class="product-left">
+              <img src="{% static 'images/pr1.webp' %}" alt="" />
+              <p>Evion 400 capsule 20's</p>
+            </div>
+          </div>
+          <div class="product-price">
+            <p>&#8377; 324</p>
+            <p>(233)</p>
+            <p>12% off</p>
+          </div>
+          <button onclick="cart()">Add</button>
+        </div>
+        <div class="products">
+          <div class="product-card">
+            <div class="product-left">
+              <img src="{% static 'images/pr2.webp' %}" alt="" />
+              <p>Neurobion fortre tablet</p>
+            </div>
+          </div>
+          <div class="product-price">
+            <p>&#8377; 167</p>
+            <p>(56)</p>
+            <p>12% off</p>
+          </div>
+          <button onclick="cart()">Add</button>
+        </div>
+        <div class="products">
+          <div class="product-card">
+            <div class="product-left">
+              <img src="{% static 'images/pr3.webp' %}" alt="" />
+              <p>Seveness</p>
+            </div>
+          </div>
+          <div class="product-price">
+            <p>&#8377; 60</p>
+            <p>(80)</p>
+            <p>12% off</p>
+          </div>
+          <button onclick="cart()">Add</button>
+        </div>
+        <div class="products">
+          <div class="product-card">
+            <div class="product-left">
+              <img src="{% static 'images/pr4.webp' %}" alt="" />
+              <p>Evion 300 capsule 10's</p>
+            </div>
+          </div>
+          <div class="product-price">
+            <p>&#8377; 100</p>
+            <p>(67)</p>
+            <p>12% off</p>
+          </div>
+          <button onclick="cart()">Add</button>
+        </div>
+        <div class="products">
+          <div class="product-card">
+            <div class="product-left">
+              <img src="{% static 'images/pr5.webp' %}" alt="" />
+              <p>Evion 100 capsule 5's</p>
+            </div>
+          </div>
+          <div class="product-price">
+            <p>&#8377; 54</p>
+            <p>(60)</p>
+            <p>12% off</p>
+          </div>
+          <button onclick="cart()">Add</button>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h1 class="text-center">Our <span>Services</span></h1>
+      <div class="services-section">
+        <div class="services">
+          <p><i class="bx bx-plus-medical"></i></p>
+          <h1>Prescription Fulfillment</h1>
+          <span
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
+            dolor?</span
+          >
+          <button onclick="signup()">More <i class="bx bx-right-arrow-alt"></i></button>
+        </div>
+        <div class="services">
+          <p><i class="bx bx-heart"></i></p>
+          <h1>Medication Counseling</h1>
+          <span
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
+            dolor?</span
+          >
+          <button onclick="signup()">More <i class="bx bx-right-arrow-alt"></i></button>
+        </div>
+        <div class="services">
+          <p><i class="fa-solid fa-prescription-bottle-medical"></i></p>
+          <h1>Health Screenings</h1>
+          <span
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
+            dolor?</span
+          >
+          <button onclick="signup()">More <i class="bx bx-right-arrow-alt"></i></button>
+        </div>
+        <div class="services">
+          <p><i class="fa-solid fa-notes-medical"></i></p>
+          <h1>Consultations</h1>
+          <span
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
+            dolor?</span
+          >
+          <button onclick="signup()">More <i class="bx bx-right-arrow-alt"></i></button>
+        </div>
+        <div class="services">
+          <p><i class="fa-solid fa-syringe"></i></p>
+          <h1>Immunizations</h1>
+          <span
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
+            dolor?</span
+          >
+          <button onclick="signup()">More <i class="bx bx-right-arrow-alt"></i></button>
+        </div>
+        <div class="services">
+          <p><i class="fa-solid fa-bed-pulse"></i></p>
+          <h1>Patient Education</h1>
+          <span
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
+            dolor?</span
+          >
+          <button onclick="signup()">More <i class="bx bx-right-arrow-alt"></i></button>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="flex">
+        <h1>New Arrivals</h1>
+        <p>View all</p>
+      </div>
+      <div class="products-section">
+        <div class="products">
+          <div class="product-card">
+            <div class="product-left">
+              <img src="{% static 'images/pr1.webp' %}" alt="" />
+              <p>Evion 400 capsule 20's</p>
+            </div>
+          </div>
+          <div class="product-price">
+            <p>&#8377; 324</p>
+            <p>(233)</p>
+            <p>12% off</p>
+          </div>
+          <button onclick="cart()">Add</button>
+        </div>
+        <div class="products">
+          <div class="product-card">
+            <div class="product-left">
+              <img src="{% static 'images/pr2.webp' %}" alt="" />
+              <p>Neurobion fortre tablet</p>
+            </div>
+          </div>
+          <div class="product-price">
+            <p>&#8377; 167</p>
+            <p>(56)</p>
+            <p>12% off</p>
+          </div>
+          <button onclick="cart()">Add</button>
+        </div>
+        <div class="products">
+          <div class="product-card">
+            <div class="product-left">
+              <img src="{% static 'images/pr3.webp' %}" alt="" />
+              <p>Seveness</p>
+            </div>
+          </div>
+          <div class="product-price">
+            <p>&#8377; 60</p>
+            <p>(80)</p>
+            <p>12% off</p>
+          </div>
+          <button onclick="cart()">Add</button>
+        </div>
+        <div class="products">
+          <div class="product-card">
+            <div class="product-left">
+              <img src="{% static 'images/pr4.webp' %}" alt="" />
+              <p>Evion 300 capsule 10's</p>
+            </div>
+          </div>
+          <div class="product-price">
+            <p>&#8377; 100</p>
+            <p>(67)</p>
+            <p>12% off</p>
+          </div>
+          <button onclick="cart()">Add</button>
+        </div>
+        <div class="products">
+          <div class="product-card">
+            <div class="product-left">
+              <img src="{% static 'images/pr5.webp' %}" alt="" />
+              <p>Evion 100 capsule 5's</p>
+            </div>
+          </div>
+          <div class="product-price">
+            <p>&#8377; 54</p>
+            <p>(60)</p>
+            <p>12% off</p>
+          </div>
+          <button onclick="cart()">Add</button>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h1 class="text-center">About<span> Us</span></h1>
+      <div class="about-us">
+        <div class="about-left">
+          <p>About Us</p>
+          <h1>Delivering Quality Healthcare Every Day: Learn More About Us</h1>
+          <span
+            >Dedicated to Delivering Quality Healthcare Solutions: Our Journey
+            and Commitment to Your Health and Wellness</span
+          >
+          <div class="about-buttons">
+            <button onclick="medicine()">Buy Now</button>
+            <button onclick="contact()">Contact Us</button>
+          </div>
+          <h6 class="socialtext">Follow us On</h6>
+          <div class="social-icons">
+            <i class="bx bxl-facebook-circle fb"></i>
+            <i class="bx bxl-instagram in"></i>
+            <i class="bx bxl-linkedin li"></i>
+          </div>
+        </div>
+        <div class="about-right">
+          <img src="{% static 'images/aboutimg.jpg' %}" alt="" />
+        </div>
+      </div>
+    </section>
+    <!-- choose us -->
+    <section>
+      <h1 class="text-center">Why<span> Choose Us</span></h1>
+      <div class="about-us">
+        <div class="choose-left">
+          <img src="{% static 'images/aboutimg.jpg' %}" alt="" />
+        </div>
+        <div class="choose-right">
+          <p>Why Choose Us</p>
+          <h1>Choose Us for Innovation, Quality, and Commitment</h1>
+          <span
+            >Dedicated to Delivering Quality Healthcare Solutions: Our Journey
+            and Commitment to Your Health and Wellness</span
+          >
+          <div class="choose-main">
+            <div class="choose-flex">
+              <div class="choose">
+                <i class="bx bx-plus-medical"></i>
+                <div class="choose-text">
+                  <h3>Online Prescription</h3>
+                  <span
+                    >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Suscipit, magnam.</span
+                  >
+                </div>
+              </div>
+              <div class="choose">
+                <i class="fa-solid fa-pump-medical"></i>
+                <div class="choose-text">
+                  <h3>Medicine Search</h3>
+                  <span
+                    >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Suscipit, magnam.</span
+                  >
+                </div>
+              </div>
+              <div class="choose">
+                <i class="fa-solid fa-kit-medical"></i>
+                <div class="choose-text">
+                  <h3>User Profiles</h3>
+                  <span
+                    >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Suscipit, magnam.</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="choose-flex">
+              <div class="choose">
+                <i class="fa-solid fa-comment-medical"></i>
+                <div class="choose-text">
+                  <h3>Order History</h3>
+                  <span
+                    >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Suscipit, magnam.</span
+                  >
+                </div>
+              </div>
+              <div class="choose">
+                <i class="fa-solid fa-capsules"></i>
+                <div class="choose-text">
+                  <h3>Dosage Information</h3>
+                  <span
+                    >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Suscipit, magnam.</span
+                  >
+                </div>
+              </div>
+              <div class="choose">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <div class="choose-text">
+                  <h3>Side Effects</h3>
+                  <span
+                    >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Suscipit, magnam.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- seller -->
+    <section>
+      <h1 class="text-center">Become<span> Seller</span></h1>
+      <div class="seller-section">
+        <div class="seller">
+          <p>Sell More, Earn More</p>
+          <h6>
+            Become a Seller Expand your pharmacy business online join our
+            marketplace and start selling today!
+          </h6>
+          <div class="seller-buttons">
+            <button onclick="sellnow()">Sell Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h1 class="text-center">Our<span> Clients</span></h1>
+      <div class="tech-stacks">
+        <div class="tech-items-wrapper">
+          <div class="tech-items">
+            <img src="{% static 'images/google.svg' %}" alt="" />
+            <img src="{% static 'images/apple.webp' %}" alt="" />
+            <img src="{% static 'images/micro.png' %}" alt="" />
+            <img src="{% static 'images/adidas.png' %}" alt="" />
+            <img src="{% static 'images/appollo.png' %}" alt="" />
+            <img src="{% static 'images/gucci.png' %}" alt="" />
+            <img src="{% static 'images/amzon.png' %}" alt="" />
+          </div>
+          <div class="tech-items">
+            <img src="{% static 'images/google.svg' %}" alt="" />
+            <img src="{% static 'images/apple.webp' %}" alt="" />
+            <img src="{% static 'images/micro.png' %}" alt="" />
+            <img src="{% static 'images/adidas.png' %}" alt="" />
+            <img src="{% static 'images/appollo.png' %}" alt="" />
+            <img src="{% static 'images/gucci.png' %}" alt="" />
+            <img src="{% static 'images/amzon.png' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endblock %}
+    <footer>
+      <div class="footer-section">
+       <div class="main-footer">
+        <div class="footer footerbasis">
+          <h1>Sudheeksha Pharmacy</h1>
+          <p>Your trusted pharmacy for quality medications, wellness products, and expert advice.
+            Visit us for personalized care and a healthier you!.</p>
+        </div>
+        <div class="footer">
+          <h2>Products</h2>
+          <ul>
+            <li>Capsules</li>
+            <li>Syrnges</li>
+            <li>Syrups</li>
+          </ul>
+        </div>
+        <div class="footer">
+          <h2>Services</h2>
+          <ul>
+            <li>Prescription Fulfillment</li>
+            <li>Medication Counseling</li>
+            <li>Health Screenings</li>
+            <li>Patient Education</li>
+          </ul>
+        </div>
+        <div class="footer footernews">
+         <h2>News Letter</h2>
+         <p class="footer-text">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+         <div class="news-search">
+          <input type="email" placeholder="Email Address" id="footer-mail">
+          <p onclick="successMessage()">Subscribe</p>
+         </div>
+         <h6 id="success"></h6>
+      </div>
+       </div>
+      <div class="copyright">
+        <div class="links">
+          <a href="#">Terms and Conditions</a>
+          <a href="#">Company</a>
+          <a href="#">Issues</a>
+          <a href="#">Admin</a>
+        </div>
+        &copy;CopyRight 2024@SudeekshaTechnologies - All rights reserved
+      </div>
+      </div>
+    </footer>
+    <script src="{% static 'javascript/index.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+{% extends 'users/index.html' %}
+{% load static %}
+{% block body %}
+  <body>
+    <!-- sell section -->
+    <section>
+      <div class="login-section">
+        <div class="sell-text">
+        <p>Sell &<span> Earn</span></p>
+        <h6><i class="fa-solid fa-triangle-exclamation"></i>  You need a seller account to sell your medicines</h6>
+        <div class="features-section">
+            <h5>Features and Benefits of selling</h5>
+            <ul class="features" id="feature">
+                <li><i class="fa-regular fa-circle-check"></i> Easy Listing Creation</li>
+                <li><i class="fa-regular fa-circle-check"></i> Customizable Product Options</li>
+                <li><i class="fa-regular fa-circle-check"></i> Secure Transactions</li>
+                <li><i class="fa-regular fa-circle-check"></i> Real-Time analytics</li>
+            </ul>
+        </div>
+        </div>
+        <div class="login-right">
+          <h1 id="Login" class="login">Create a Seller account</h1>
+          <div class="forms">
+            <label for="">Name</label>
+            <div class="form-input">
+              <i class="bx bx-user-circle"></i>
+              <input type="username" placeholder="Enter Your Name" id="Name" />
+            </div>
+            <label for="">Phone</label>
+            <div class="form-input">
+              <i class="bx bx-phone-call"></i>
+              <input type="text" placeholder="Enter Your PhoneNo" id="phone" />
+            </div>
+            <label for="">Address</label>
+            <div class="form-input">
+                <i class="fa-regular fa-address-book"></i>
+              <input type="text" placeholder="Enter Your Address" id="address" />
+            </div>
+            <div class="form-input form-check">
+              <input type="checkbox" placeholder="Enter Your Address" id="address" />
+               <p>I accept the <a href="/terms.html">terms and conditions</a></p>
+            </div>
+            <div class="form-button">
+              <button onclick="displayMessage3()">Create</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endblock body %}

@@ -1,0 +1,28 @@
+{% extends 'users/index.html' %}
+{% load static %}
+{% block body %}
+    <section>
+      <div class="search-center">
+        <div class="search-section">
+          <i class="bx bx-search-alt-2"></i>
+          <input type="search" placeholder="Search Medicines..">
+        </div>
+      </div>
+      <div class="products-section">
+        <div class="products">
+          <div class="product-card">
+            <div class="product-left">
+              <img src="{% static 'images/pr1.webp' %}" alt="" />
+              <p id="medicine-title">Evion</p>
+            </div>
+          </div>
+          <div class="product-price">
+            <p id="med-price">&#8377;324</p>
+            <p>(233)</p>
+            <p>12% off</p>
+          </div>
+          <button onclick="cart()">Add</button>
+        </div>
+      </div>
+    </section>
+    {% endblock body %}

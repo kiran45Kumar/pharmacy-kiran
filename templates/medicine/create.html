@@ -1,0 +1,109 @@
+{% extends 'users/index.html' %}
+{% block body %}
+    
+
+  <!-- sell section -->
+  <section>
+    <div class="login-section create-section">
+      <div class="sell-text text-left">
+        <p>Create Your <span>Order</span></p>
+        <h5>
+          A seller account is required to provide a structured way for
+          individuals or businesses to manage and track their sales,
+          inventory, and customer interactions on a platform.
+        </h5>
+        <!-- <div class="create-button">
+          <button>Contact Us</button>
+        </div> -->
+      </div>
+      <div class="login-right login-main">
+        <h1 id="Login" class="login">Create your order</h1>
+        <div class="forms form-flex">
+          <!-- Fieldset for General Information -->
+          <fieldset class="form-fieldset">
+            <legend>General Information</legend>
+            <label for="gname">Generic Name</label>
+            <div class="form-input form-control">
+              <input type="text" placeholder="Generic Name" id="gname" />
+            </div>
+
+            <label for="brand">Brand Name</label>
+            <div class="form-input form-control">
+              <input type="text" placeholder="Brand Name" id="brand" />
+            </div>
+
+            <label for="category">Category</label>
+            <div class="form-input form-control">
+              <input type="text" placeholder="Tablets/Capsules/ id="category"
+              />
+            </div>
+
+            <label for="price">Price</label>
+            <div class="form-input form-control">
+              <input type="text" placeholder="Price" id="price" />
+            </div>
+
+            <label for="address">Quantity</label>
+            <div class="form-input form-control">
+              <input type="text" placeholder="Quantity" id="quantity" />
+            </div>
+          </fieldset>
+
+          <!-- Fieldset for Drug Details -->
+          <fieldset class="form-fieldset">
+            <legend>Drug Details</legend>
+            <label for="Dosage">Dosage-form</label>
+            <div class="form-input form-control">
+              <input type="text" placeholder="Dosage form" id="Dosage" />
+            </div>
+
+            <label for="Composition">Composition</label>
+            <div class="form-input form-control">
+              <input type="text" placeholder="Composition" id="Composition" />
+            </div>
+
+            <label for="Indications">Indications</label>
+            <div class="form-input form-control">
+              <input type="text" placeholder="Indications" id="Indication" />
+            </div>
+
+            <label for="Contra">Contra-Indications</label>
+            <div class="form-input form-control">
+              <input
+                type="text"
+                placeholder="Contra-Indications"
+                id="Contra"
+              />
+            </div>
+
+            <label for="sid">Side Effects</label>
+            <div class="form-input form-control">
+              <input type="text" placeholder="Side Effects" id="side" />
+            </div>
+
+            <label for="barcode">Barcode</label>
+            <div class="form-input form-control">
+              <input type="text" placeholder="Barcode" id="barcode" />
+            </div>
+          </fieldset>
+
+          <!-- Fieldset for Agreement -->
+          <fieldset class="form-fieldset">
+            <legend>Agreement</legend>
+            <div class="form-input form-check">
+              <input type="checkbox" id="terms" />
+              <label for="terms"
+                >I accept the
+                <a href="/terms.html">terms and conditions</a></label
+              >
+            </div>
+            <div class="form-button">
+              <button onclick="create()">Create</button>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock  %}

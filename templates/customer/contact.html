@@ -1,0 +1,48 @@
+{% extends 'customer/index.html' %}
+{% load static %}
+{% block body    %}
+  <body>
+    <!-- contact -->
+    <section>
+      <div class="login-section">
+        <div class="login-left">
+          <!-- <p>Got a technical Issue</p> -->
+          <h1>Got a technical Issue</h1>
+          <h4>Fill the form we will solve in 30 minutes</h4>
+          <img src="{% static 'images/login-left.jpg' %}" alt="" />
+        </div>
+        <hr class="secondright" />
+        <div class="login-right">
+          <h1 id="Login" class="login">Any Issues</h1>
+          <div class="forms">
+            <label for="cname">Name</label>
+            <div class="form-input">
+              <i class="bx bx-user-circle"></i>
+              <input type="text" placeholder="Enter Your Name" id="cname" />
+            </div>
+            <label for="cemail">Email</label>
+            <div class="form-input">
+              <i class="bx bx-envelope"></i>
+              <input type="email" placeholder="Enter Your Email" id="cemail" />
+            </div>
+            <label for="">Message</label>
+            <div class="form-input">
+              <i class="bx bx-message"></i>
+              <textarea
+                name=""
+                id="message"
+                cols="20"
+                rows="2"
+                placeholder="Enter Your Message"
+              ></textarea>
+            </div>
+            <div class="form-button">
+              <button onclick="contact()">Contact</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </body>
+
+    {% endblock  %}

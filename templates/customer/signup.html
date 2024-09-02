@@ -1,0 +1,79 @@
+{% extends 'customer/index.html' %}
+{% load static %}
+{% block body %}
+    <!-- hero-login-section -->
+    <section>
+      <div class="login-section">
+        <div class="login-left">
+          <p>Welcome to</p>
+          <h1>Sudeeksha Pharmacy</h1>
+          <h4>Create an account to continue</h4>
+          <img src="{% static 'images/login-left.jpg' %}" alt="" />
+        </div>
+        <hr class="secondright" />
+        <div class="login-right">
+        
+            {% if msg %}
+            <h1 style="color: red ;" id="Login" class="login">{{msg}}</h1>
+            {% else %}
+              <h1>Create Your Account</h1>
+            {% endif %}
+          </h1>
+          <div class="forms">
+            <form action="{% url 'signup' %}" method="post">
+              {% csrf_token %}
+            <label for="">Email</label>
+            <div class="form-input">
+              <i class="bx bx-envelope"></i>
+              <input type="email" placeholder="Enter Your Email" id="email" name="email"  />
+            </div>
+            <label for="">Password</label>
+            <div class="form-input">
+              <i class="bx bx-lock"></i>
+              <input
+                type="password"
+                placeholder="Enter Your Password"
+                id="input"
+                name="input"
+          
+              />
+              <button class="icon" disabled>
+                <i
+                  id="eye"
+                  onclick="showIcon()"
+                  class="fa-solid fa-eye-slash icon-slash"
+                ></i>
+              </button>
+            </div>
+            <label for="">Username</label>
+            <div class="form-input">
+                <i class='bx bx-user-circle'></i>
+              <input type="username" placeholder="Enter Your Name" id="Name" name="Name" />
+            </div>
+            <label for="">Phone</label>
+            <div class="form-input">
+                <i class='bx bx-phone-call' ></i>
+              <input type="text" placeholder="Enter Your PhoneNo" id="phone" name="phone"  />
+            </div>
+          
+            <div class="form-input form-checkbox">
+              <input type="checkbox"/>
+              <p>Remember Me</p>
+            </div>
+            <div class="form-button">
+              <button  type="submit" onclick="displayMessage2()">Sign Up</button>
+            </div>
+          </form>
+        
+            <p class="account">
+              Already have an account?
+              <a href="/login"
+                >Log In
+                <i class="fa-solid fa-icon fa-arrow-up-right-from-square"></i
+              ></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endblock %}
